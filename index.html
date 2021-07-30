@@ -54,9 +54,18 @@
                 </div>
             </div>
         </form>
+
+        <div class="input-group d-none mt-4">
+            <div class="input-group-prepend">
+                <div class="btn btn-danger text-center" style="width: 8.4rem; pointer-events: none;">Error</div>
+            </div>
+            <div class="form-control">
+                <span class="card-title errormsg"></span>
+            </div>
+        </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="src/localdatefn.js"></script>
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
 
