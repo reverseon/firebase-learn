@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Chatroom</title>
+</head>
+<body>
+    <div class="container my-4">
+        <h1 class="my-4 text-center">Live Chatroom for SPARTA Challenge</h1>
+
+        <div class="chatroom mb-3 text-center">
+            <div class="my-2">Chatroom available</div>
+            <button class="btn btn-warning" id="general">#general</button>
+            <button class="btn btn-warning" id="curhat">#curhat</button>
+        </div>
+
+        <div class="chat-window">
+            <ul class="chat-list list-group">
+            </ul>
+        </div>
+        <div class="input-group mt-4">
+            <div class="input-group-prepend">
+                <div class="btn btn-dark text-center" style="width: 8.4rem; pointer-events: none;">Username</div>
+            </div>
+            <div class="form-control">
+                <span class="card-title usernamehold"></span>
+            </div>
+        </div>
+
+        <form class="new-chat my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="btn btn-dark text-center" style="width: 8.4rem; pointer-events: none;" >Message here</div>
+                </div>
+                <input type="text" id="message" class="form-control" required>
+                <div class="input-group-append">
+                    <input type="submit" class="btn btn-warning" style="width: 5rem;" value="send">
+                </div>
+            </div>
+        </form>
+        
+        <form class="new-name my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="btn btn-dark text-center" style="width: 8.4rem; pointer-events: none;">New username</div>
+                </div>
+                <input type="text" id="uname" class="form-control" required>
+                <div class="input-group-append">
+                    <input type="submit" class="btn btn-warning" value="update" style="width: 5rem;">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyD_otAZzKAjkGHcHKmYCbqq-oEvUkoPd8s",
+        authDomain: "modernjstest-3e45d.firebaseapp.com",
+        projectId: "modernjstest-3e45d",
+        storageBucket: "modernjstest-3e45d.appspot.com",
+        messagingSenderId: "783265687138",
+        appId: "1:783265687138:web:7e6db7be417845e684933b"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
+    <script src="src/chat.js"></script>
+    <script src="src/ui.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>
