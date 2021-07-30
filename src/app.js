@@ -13,7 +13,7 @@ uhold.innerText = username;
 newchat.addEventListener('submit', e=> {
     e.preventDefault();
     const ncval = newchat.message.value;
-    if (!/^[a-zA-Z ]{1,256}$/.test(ncval)) {
+    if (!/^[\x21-\x7E ]{1,128}$/.test(ncval)) {
         errmsg.parentElement.parentElement.classList.remove('d-none');
         errmsg.innerHTML = `<b>Max 128 Character and ASCII recognized only</b>`
     } else {
